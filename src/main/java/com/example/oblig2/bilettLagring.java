@@ -8,53 +8,53 @@ public class bilettLagring {
     private String telefonNr;
     private String epost;
 
-    public bilettLagring(String film, String antall, String fornavn, String etternavn, String telefonnr, String epost) {
-        this.filmer = film;
-        this.antallBiletter = antall;
-        this.fornNavn = fornavn;
-        this.etterNavn = etternavn;
-        this.telefonNr = telefonnr;
+    public bilettLagring(String filmer, String antallBiletter, String fornNavn, String etterNavn, String telefonNr, String epost) {
+        this.filmer = filmer;
+        this.antallBiletter = antallBiletter;
+        this.fornNavn = fornNavn;
+        this.etterNavn = etterNavn;
+        this.telefonNr = telefonNr;
         this.epost = epost;
     }
 
-    public String getFilm() {
+    public String getFilmer() {
         return filmer;
     }
 
-    public void setFilm(String film) {
-        this.filmer = film;
+    public void setFilmer(String filmer) {
+        this.filmer = filmer;
     }
 
-    public String getAntall() {
+    public String getAntallBiletter() {
         return antallBiletter;
     }
 
-    public void setAntall(String antall) {
-        this.antallBiletter = antall;
+    public void setAntallBiletter(String antallBiletter) {
+        this.antallBiletter = antallBiletter;
     }
 
-    public String getFornavn() {
+    public String getFornNavn() {
         return fornNavn;
     }
 
-    public void setFornavn(String fornavn) {
-        this.fornNavn = fornavn;
+    public void setFornNavn(String fornNavn) {
+        this.fornNavn = fornNavn;
     }
 
-    public String getEtternavn() {
+    public String getEtterNavn() {
         return etterNavn;
     }
 
-    public void setEtternavn(String etternavn) {
-        this.etterNavn = etternavn;
+    public void setEtterNavn(String etterNavn) {
+        this.etterNavn = etterNavn;
     }
 
-    public String getTelefonnr() {
+    public String getTelefonNr() {
         return telefonNr;
     }
 
-    public void setTelefonnr(String telefonnr) {
-        this.telefonNr = telefonnr;
+    public void setTelefonNr(String telefonNr) {
+        this.telefonNr = telefonNr;
     }
 
     public String getEpost() {

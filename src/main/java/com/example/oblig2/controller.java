@@ -16,8 +16,13 @@ public class controller {
     public void save(bilettLagring billett) {
         billettListe.add(billett);
     }
-    @GetMapping("/hent")
+    @GetMapping("/hentBilletter")
     public List<bilettLagring> getBillettListe() {
         return billettListe;
+    }
+
+    @PostMapping ("/slett")
+    public void slettArray(){
+        billettListe.clear();
     }
 }
