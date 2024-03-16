@@ -1,6 +1,6 @@
 package com.example.oblig2;
 
-public class controller {a
+public class controller {
 
 
 }
