@@ -5,6 +5,48 @@
     <title>Title</title>
 </head>
 <body>
-asdadsasd
+<h1>Bestilling av kinobiletter</h1>
+<!-- Lar brukeren velge film -->
+<label for="filmer">Velg film her:</label>
+<select name="filmer" id="filmer">
+    <option value="Pjango">Pjango</option>
+    <option value="Y-men">Y-men</option>
+    <option value="Fantastic 5">Fantastic 5</option>
+    <option value="Revengers">Revengers</option>
+</select>
+<!--Lar brukeren velge antall biletter input må være tall mellom 0 og 100 -->
+<table>
+    <tr>
+        <td><label for="antallBiletter">Antall:</label></td>
+        <td><input type="number" min="1" step="1" max="100" id="antallBiletter" name="antallBiletter" style="width: 40px;"></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td><label for="fornNavn">Fornavn:</label></td>
+        <td><input type="text" id="fornNavn" name="fornNavn"></td>
+    </tr>
+    <tr>
+        <td><label for="etterNavn">Etternavn:</label></td>
+        <td><input type="text" id="etterNavn" name="etterNavn"></td>
+    </tr>
+    <tr>
+        <td><label for="telefonNr">Telefonnr:</label></td>
+        <td><input type="text" id="telefonNr" name="telefonNr"></td>
+    </tr>
+    <tr>
+        <td><label for="epost">Epost:</label></td>
+        <td><input type="text" id="epost" name="epost"></td>
+    </tr>
+</table>
+
+<button onclick="kjopBilett()">Kjøp Biletter</button>
+
+<h2>Alle billetter</h2>
+<p id="output"></p>
+
+<button onclick="slettArray()">Slett alle bilettene</button>
+<script src="oblig2js.js"></script>
 </body>
-</html>asd
+</html>
