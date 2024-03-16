@@ -76,3 +76,4 @@ function slettArray(){
         hentBilletter();
     });
 }
+
