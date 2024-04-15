@@ -19,7 +19,7 @@ public class bilettRepository {
         db.update(sql, billett.getFilmer(), billett.getAntallBiletter(), billett.getFornNavn(), billett.getEtterNavn(), billett.getTelefonNr(), billett.getEpost());
     }
     public List<bilettLagring> hentAlleBilletter() {
-        String sql = "SELECT * FROM billett";
+        String sql = "SELECT * FROM billett ORDER BY etterNavn ASC";
         return db.query(sql, new BeanPropertyRowMapper<>(bilettLagring.class));
     }
 
