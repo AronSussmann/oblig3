@@ -1,0 +1,10 @@
+CREATE TABLE Book (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    filmer VARCHAR(255) NOT NULL,
+    antallBiletter INTEGER(255) NOT NULL,
+    forNavn VARCHAR(255) NOT NULL,
+    etterNavn VARCHAR(255) NOT NULL,
+    telefonNR INTEGER(255) NOT NULL,
+    epost VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
