@@ -8,6 +8,9 @@ public class bilettLagring {
     private String telefonNr;
     private String epost;
 
+    public bilettLagring() {
+    }
+
     public bilettLagring(String filmer, String antallBiletter, String fornNavn, String etterNavn, String telefonNr, String epost) {
         this.filmer = filmer;
         this.antallBiletter = antallBiletter;
