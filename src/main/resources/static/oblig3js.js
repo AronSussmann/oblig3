@@ -45,7 +45,6 @@ function lagreInfo(){
         epost: $("#epost").val()
     };
     $.post("/lagre", billett, function(){
-        hentBilletter();
     });
 
     // Tøm input-feltene
