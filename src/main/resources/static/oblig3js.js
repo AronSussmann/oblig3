@@ -65,14 +65,14 @@ function formaterBilletter(visBilletter){
     let ut = "";
     for (let billett of visBilletter){
         ut += "Film: " + billett.filmer + " Antall: " + billett.antallBiletter + " Navn: " + billett.fornNavn + " " + billett.etterNavn + " Telefon: " + billett.telefonNr + " Epost: " + billett.epost + "<br>";
-        ut += "<button class='btn btn-danger' onclick='oppdaterBillett()'>Oppdater</button>";
-        ut += "<button class='btn btn-danger' onclick='slettBillett()'>Slett</button><br>";
+        ut += "<button class='btn btn-danger' onclick='oppdaterBillett(" + billett.id + ")'>Oppdater</button>";
+        ut += "<button class='btn btn-danger' onclick='slettBillett(" + billett.id + ")'>Slett</button><br>";
     }
     document.getElementById("output").innerHTML = ut;
 }
 
-function slettBillett(){
-    $.post("/slettBilett", function(id){
+function slettBillett(id){
+    $.post("/slettBilett", {id:id}, function(){
         hentBilletter();
     });
 }
@@ -83,3 +83,28 @@ function slettArray(){
     });
 }
 
+function oppdaterBillett(id){
+
+    $.get("/hentEnBillett", {id:id}, function(billett){
+        $("#filmer").val(billett.filmer);
+        $("#antallBiletter").val(billett.antallBiletter);
+        $("#fornNavn").val(billett.fornNavn);
+        $("#etterNavn").val(billett.etterNavn);
+        $("#telefonNr").val(billett.telefonNr);
+        $("#epost").val(billett.epost);
+        $("#id").val(billett.id);
+    });
+}
+function sendOppdatertBillett(id){
+    let oppdatertBillett = {
+        filmer: $("#filmer").val(),
+        antallBiletter: $("#antallBiletter").val(),
+        fornNavn: $("#fornNavn").val(),
+        etterNavn: $("#etterNavn").val(),
+        telefonNr: $("#telefonNr").val(),
+        epost: $("#epost").val()
+    };
+    $.post("/oppdaterBillett", {id:id, billett:oppdatertBillett}, function(){
+        hentBilletter();
+    });
+}

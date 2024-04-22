@@ -21,7 +21,7 @@ public class bilettRepository {
         db.update(sql, billett.getFilmer(), billett.getAntallBiletter(), billett.getFornNavn(), billett.getEtterNavn(), billett.getTelefonNr(), billett.getEpost());
     }
     public List<bilettLagring> hentAlleBilletter() {
-        String sql = "SELECT * FROM billett ORDER BY etterNavn DESC";
+        String sql = "SELECT * FROM billett ORDER BY etterNavn ASC";
         return db.query(sql, new BeanPropertyRowMapper<>(bilettLagring.class));
     }
 
@@ -33,6 +33,12 @@ public class bilettRepository {
         String sql = "DELETE FROM billett WHERE id=?";
         db.update(sql, id);
     }
+       public bilettLagring hentEnBillett(Integer id) {
+            String sql = "SELECT * FROM billett WHERE id=?";
+            return db.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<>(bilettLagring.class));
+        }
 
-
+    public void oppdaterBillett(bilettLagring oppdatertBillett) {
+        String sql = "UPDATE billett SET filmer = ?, antallBiletter = ?, fornNavn = ?, etterNavn = ?, telefonNr = ?, epost = ? WHERE id = ?";
+        db.update(sql, oppdatertBillett.getFilmer(), oppdatertBillett.getAntallBiletter(), oppdatertBillett.getFornNavn(), oppdatertBillett.getEtterNavn(), oppdatertBillett.getTelefonNr(), oppdatertBillett.getEpost(), oppdatertBillett.getId());    }
 }
