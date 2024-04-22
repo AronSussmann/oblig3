@@ -37,6 +37,7 @@ function testInfo() {
 
 function lagreInfo(){
     const billett = {
+        id: $("#id").val(),
         filmer: $("#filmer").val(),
         antallBiletter: $("#antallBiletter").val(),
         fornNavn: $("#fornNavn").val(),
@@ -44,8 +45,17 @@ function lagreInfo(){
         telefonNr: $("#telefonNr").val(),
         epost: $("#epost").val()
     };
-    $.post("/lagre", billett, function(){
-    });
+
+    if(billett.id){
+        $.post("/oppdaterBillett", billett, function(){
+            hentBilletter();
+        });
+    }else {
+        $.post("/lagre", billett, function(){
+            hentBilletter();
+        });
+    }
+
 
     // Tøm input-feltene
     $("#filmer").val("");

@@ -40,5 +40,5 @@ public class bilettRepository {
 
     public void oppdaterBillett(bilettLagring oppdatertBillett) {
         String sql = "UPDATE billett SET filmer = ?, antallBiletter = ?, fornNavn = ?, etterNavn = ?, telefonNr = ?, epost = ? WHERE id = ?";
-        db.update(sql, oppdatertBillett.getFilmer(), oppdatertBillett.getAntallBiletter(), oppdatertBillett.getFornNavn(), oppdatertBillett.getEtterNavn(), oppdatertBillett.getTelefonNr(), oppdatertBillett.getEpost(), oppdatertBillett.getId());    }
+        db.update(sql, oppdatertBillett.getFilmer(), oppdatertBillett.getAntallBiletter(), oppdatertBillett.getFornNavn(), oppdatertBillett.getEtterNavn(), oppdatertBillett.getTelefonNr(), oppdatertBillett.getEpost(), oppdatertBillett.getId()); }
 }
