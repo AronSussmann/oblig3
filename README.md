@@ -1,3 +1,7 @@
+https://youtu.be/Au747aFLpzc     video link
+
+
+
 Kinobillettbestillingsapplikasjon
 Dette er en enkel webapplikasjon for bestilling av kinobilletter. Brukeren kan velge film, angi antall billetter, og fylle ut personlig informasjon. Informasjonen valideres ved hjelp av regex før den lagres og vises til brukeren. Det er også mulig å slette alle billetter fra systemet.
 
