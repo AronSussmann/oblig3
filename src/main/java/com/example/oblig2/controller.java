@@ -18,15 +18,20 @@ public class controller {
 
     @PostMapping("/lagre")
     public void save(bilettLagring billett) {
-     rep.lagreBillett(billett);
+        rep.lagreBillett(billett);
     }
     @GetMapping("/hentBilletter")
     public List<bilettLagring> getBillettListe() {
         return rep.hentAlleBilletter();
     }
 
-    @PostMapping ("/slett")
+    @PostMapping ("/slettAlt")
     public void slettArray(){
         rep.slettAlleBilletter();
+    }
+
+    @PostMapping ("/slettBilett")
+    public void slettBilett(Integer id){
+        rep.slettBillett(id);
     }
 }

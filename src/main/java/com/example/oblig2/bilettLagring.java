@@ -1,6 +1,7 @@
 package com.example.oblig2;
 
 public class bilettLagring {
+    private Integer id;
     private String filmer;
     private String antallBiletter;
     private String fornNavn;
@@ -11,7 +12,8 @@ public class bilettLagring {
     public bilettLagring() {
     }
 
-    public bilettLagring(String filmer, String antallBiletter, String fornNavn, String etterNavn, String telefonNr, String epost) {
+    public bilettLagring(String filmer, String antallBiletter, String fornNavn, String etterNavn, String telefonNr, String epost, Integer id) {
+        this.id = id;
         this.filmer = filmer;
         this.antallBiletter = antallBiletter;
         this.fornNavn = fornNavn;
@@ -66,5 +68,13 @@ public class bilettLagring {
 
     public void setEpost(String epost) {
         this.epost = epost;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

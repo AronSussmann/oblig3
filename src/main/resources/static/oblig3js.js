@@ -65,13 +65,20 @@ function formaterBilletter(visBilletter){
     let ut = "";
     for (let billett of visBilletter){
         ut += "Film: " + billett.filmer + " Antall: " + billett.antallBiletter + " Navn: " + billett.fornNavn + " " + billett.etterNavn + " Telefon: " + billett.telefonNr + " Epost: " + billett.epost + "<br>";
+        ut += "<button class='btn btn-danger' onclick='oppdaterBillett()'>Oppdater</button>";
+        ut += "<button class='btn btn-danger' onclick='slettBillett()'>Slett</button><br>";
     }
     document.getElementById("output").innerHTML = ut;
 }
 
+function slettBillett(){
+    $.post("/slettBilett", function(id){
+        hentBilletter();
+    });
+}
 
 function slettArray(){
-    $.post("/slett", function(){
+    $.post("/slettAlt", function(){
         hentBilletter();
     });
 }

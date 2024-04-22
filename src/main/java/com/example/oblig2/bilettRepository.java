@@ -13,6 +13,8 @@ public class bilettRepository {
 
     @Autowired
     private JdbcTemplate db;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     public void lagreBillett(bilettLagring billett) {
         String sql = "INSERT INTO billett (filmer, antallBiletter, fornNavn, etterNavn, telefonNr, epost) VALUES(?, ?, ?, ?, ?, ?)";
@@ -27,5 +29,10 @@ public class bilettRepository {
         String sql = "DELETE FROM billett";
         db.update(sql);
     }
+    public void slettBillett(Integer id) {
+        String sql = "DELETE FROM billett WHERE id=?";
+        db.update(sql, id);
+    }
+
 
 }
